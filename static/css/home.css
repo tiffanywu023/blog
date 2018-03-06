@@ -1,0 +1,799 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+}
+p{
+    margin: 0;
+}
+header,.wrap{
+    height: 450px;
+}
+
+/*头部*/
+.wrap{
+    position: relative;
+    background-size: 100%;
+    font-family: "Hannotate SC";
+    overflow: hidden;
+}
+.lunpoBox{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: 1s transform;
+}
+.wrapImgBox{
+    width: 100%;
+    height: 100%;
+}
+.wrapImg{
+    width: 100%;
+    background-size: cover;
+}
+.all{
+    position: relative;
+    width: 16%;
+    height: 20px;
+    float: right;
+    margin-top: 32%;
+    z-index: 11;
+}
+.circleBox{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 3px;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    opacity: 0.5;
+}
+.active{
+    opacity: 1;
+}
+.shade{
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.25;
+    /*margin-top: -430px;*/
+}
+.title{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    color: white;
+    font-size: 38px;
+    z-index: 2;
+}
+.navigationBox{
+    position: absolute;
+    display: flex;
+    margin-top: 15px;
+    height: 10%;
+    width: 100%;
+    z-index: 11;
+}
+.navigationLeft{
+    flex: 0 0 25%;
+    height: 100%;
+}
+.navigationImg{
+    position: relative;
+    margin-left: -65%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+.navigationRight{
+    flex: 0 0 75%;
+    height: 100%;
+    color: white;
+    font-size: 20px;
+}
+.nav{
+    position: relative;
+    height: 45px;
+    top: 17%;
+    left: 25%;
+}
+.navCenter{
+    position: relative;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    cursor: pointer;
+}
+.hover{
+    border-bottom: 1px solid white;
+    animation-name: extend;
+    animation-duration:0.5s;
+}
+/*搜索栏*/
+.searchBox{
+    position: absolute;
+    background: white;
+    opacity: 0.8;
+    width: 25%;
+    height: 100%;
+    top: 0;
+    z-index: 5;
+    display: none;
+    z-index: 1111;
+}
+.searchHeaderBox{
+    position: relative;
+    height: 31px;
+    font-size: 20px;
+    margin-top: 10%;
+}
+.searchTitle{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%;
+}
+.searchInput{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 33%;
+    height: 25px;
+    width: 165px;
+    border: 2px;
+    outline: none;
+    border-style:solid none solid none;
+    background:transparent;
+}
+.searchButton{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) scaleX(-1);
+    left: 88%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.resultBox{
+    text-align: left;
+    width: 90%;
+    font-size: 14px;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.resultTit{
+    margin-top: 10px;
+}
+
+.highlight{
+    background: #fffc00;
+}
+/*左栏*/
+.mainBody{
+    position: relative;
+    display: flex;
+    background-color: #e3e3e3;
+}
+.blogger{
+    flex: 0 0 25%;
+    height: 1000px;
+}
+.bloggerBox{
+    position: relative;
+    top: 5%;
+    left: 25%;
+    width: 220px;
+    height: 95%;
+    font-family: "Hannotate SC";
+}
+.profilePictureBox,.profilePicture{
+    width: 220px;
+    height: 220px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #151515;
+}
+.IdentifyBox{
+    margin-top: 25px;
+    font-size: 25px;
+}
+.witness{
+    font-size: 16px;
+}
+.iconBox{
+    margin-top: 16px;
+    border-bottom: 1px solid #000000;
+}
+.icon{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.articleBox{
+    height: 55%;
+}
+.articleTitle{
+    margin-top: 18px;
+    font-size: 20px;
+}
+.articleMenu{
+    height: 95%;
+    border: 1px solid #000000;
+}
+.articleCls{
+    margin: 18px;
+    cursor: pointer;
+}
+.MenuHover{
+    color: aquamarine;
+}
+/*右栏*/
+.articles{
+    flex: 0 0 75%;
+    position: relative;
+    height: 1000px;
+    background-color: #efefef;
+    /*background-color: #bebebe;*/
+    font-family: "Hannotate SC";
+}
+.articleList{
+    /*position: absolute;*/
+    /*left: 50%;*/
+    /*top: 50%;*/
+    /*transform: translate(-50%,-50%);*/
+    margin-left: 5%;
+    margin-top: 2%;
+    width: 90%;
+    height: 90%;
+    /*border: solid 1px rgba(0, 0, 0, 0.99);*/
+}
+.editButton{
+    position: relative;
+    height: 32px;
+}
+.button{
+    /*position: absolute;*/
+    /*left: 91%;*/
+    margin-left: 90%;
+    margin-top: 2%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+/*博文*/
+/*博文编辑框*/
+.writeBlog{
+    width: 60%;
+    height: 50%;
+    position: absolute;
+    background: white;
+    opacity: 0.8;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+.inputTitle{
+    width: 80%;
+    height: 5%;
+    margin-top: 10%;
+    font-size: 16px;
+    text-align: center;
+}
+.inputContent{
+    width: 80%;
+    height: 57%;
+    resize: none;
+    margin-top: 5%;
+    font-size: 16px;
+}
+input::-webkit-input-placeholder {
+    font-size: 16px;
+    /* placeholder位置 */
+    text-align: center;
+}
+.sendButton{
+    /*position: absolute;*/
+
+}
+.closeButton{
+    width: 25px;
+    height: 25px;
+    position:absolute;
+    left: 94%;
+    top: 1%;
+    cursor: pointer;
+}
+.confirmButton{
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/*博文栏*/
+.blogCell{
+    width: 100%;
+    height: 100%;
+    border-bottom: solid #252525 1px;
+}
+.blogBox{
+    width: 93%;
+}
+.blogTitle{
+    margin: 10px;
+}
+.blogAuthor{
+    color: #575969;
+    margin: 5px;
+}
+.titleTxt{
+    color: #575969;
+    font-size: 18px;
+}
+.blogTime{
+    margin: 5px;
+    color: #878787;
+}
+.blogCls{
+    color: #878787;
+}
+.blogContent{
+    position: relative;
+    width: 90%;
+    left: 5%;
+    margin: 20px;
+    text-align: left;
+    color: #5d5e6f;
+}
+.moreBox{
+    /*position: absolute;*/
+    width: 100%;
+    margin-top: -3%;
+    display: none;
+}
+.fold{
+    color: #656779;
+    position: absolute;
+}
+.forwardsButton{
+    width: 25px;
+    height: 22px;
+    cursor: pointer;
+    margin-left: 745px;
+}
+.Pagination{
+    position: relative;
+    margin-top: 4%;
+}
+/*关于我*/
+.aboutMe{
+    height: 1000px;
+}
+/*相册*/
+.album{
+    height: 1000px;
+}
+.come{
+    display: block;
+    animation-name:come;
+    animation-duration:0.6s;
+}
+.left{
+    display: block;
+    animation-name:left;
+    animation-duration:1.8s;
+    animation-fill-mode:forwards;
+}
+.rotate{
+    transform:rotate(180deg);
+}
+.buttonTop{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+.upButton{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+}
+.upTxt{
+    cursor: pointer;
+    margin-top: -13px;
+}
+/*音乐*/
+.musicBackground{
+    position: absolute;
+    width: 100%;
+    height: 690px;
+    background-image: url("../img/TaylorSwift.jpg");
+    background-size: cover;
+    filter: blur(10px);
+    overflow: hidden;
+    margin-top: 15px;
+}
+.musicOverflow{
+    overflow: hidden;
+}
+.musicHead{
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    background-color: #232323;
+    opacity: 0.97;
+    z-index: 11;
+}
+.playing{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Hannotate SC";
+    color: #efefef;
+}
+.musicPlay{
+    position: absolute;
+    display: flex;
+    margin-top: 655px;
+    width: 100%;
+    height: 65px;
+    background-color: #1a1a1a;
+    opacity: 0.95;
+    z-index: 11;
+}
+.musicLeft{
+    flex: 0 0 50%;
+    /*border: 1px solid blue;*/
+}
+.musicRight{
+    flex: 0 0 50%;
+}
+.musicCd{
+    position: relative;
+    margin-top: 10%;
+    height: 80%;
+}
+.cdBox{
+    margin-left: 20%;
+    width: 400px;
+    height: 400px;
+}
+.cd{
+    width: 350px;
+    height: 350px;
+}
+.cdBoxImg{
+    position: relative;
+}
+.con {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    margin: 0;
+}
+.cdShadow{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: 220px;
+    background-color: #1a1a1a;
+    border-radius: 50%;
+}
+.albumImg{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.cdShadow{
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    color: #1c1c1c;
+}
+.cdNeedle{
+    margin-top: -417px;
+}
+.needle{
+    transform-origin: top right ;
+    margin-left: 55%;
+    width: 130px;
+    height: 220px;
+    transform: rotate(-38deg);
+    transition: all 0.5s;
+}
+.musicTit{
+    font-family: "Hannotate SC";
+    font-size: 20px;
+    font-weight: bold;
+}
+.musicSinger{
+    margin-top: 15px;
+    font-family: "Hannotate SC";
+    font-size: 16px;
+}
+.musicAlbum{
+    margin-top: 15px;
+    font-family: "Hannotate SC";
+    font-size: 16px;
+}
+.musicButton{
+    margin-top: 35px;
+}
+.musicNav{
+    margin: 8px;
+    padding: 5px;
+    border-radius: 20%;
+    border: 1px solid black;
+    background-color: #2c2c2c;
+}
+.navFont{
+    font-family: "Hannotate SC";
+    color: #efefef;
+}
+.musicControl{
+    flex: 0 0 20%;
+    height: 100%;
+    margin-left: 3%;
+}
+.play, .pre, .next{
+    position: relative;
+    float: left;
+    padding: 15px;
+    width: 45px;
+    height: 45px;
+}
+.playIcon, .preIcon, .nextIcon{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+.preIcon{
+    transform: rotate(180deg);
+}
+.musicProgressBar{
+    display: flex;
+    flex: 0 0 47%;
+}
+.inputBox{
+    flex: 0 0 85%;
+}
+.timeBar{
+    flex: 0 0 9%;
+    margin-top: 22px;
+    color: #efefef;
+}
+.timePercent{
+    width: 100%;
+}
+input[type=range] {
+    margin-top: 29px;
+    -webkit-appearance: none;
+    width: 600px;
+    border-radius: 10px; /*这个属性设置使填充进度条时的图形为圆角*/
+    background: -webkit-linear-gradient(#777777, #777777) no-repeat, #e6e6e6;
+    background-size: 0% 100%;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    height: 6px;
+    border-radius: 10px; /*将轨道设为圆角的*/
+    box-shadow: 0 1px 1px #454d4e, inset 0 .125em .125em #0d1112; /*轨道内置阴影效果*/
+}
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    margin-top: -4px; /*使滑块超出轨道部分的偏移量相等*/
+    background: #ffffff;
+    border-radius: 50%; /*外观设置为圆形*/
+    border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
+    box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/
+}
+.vol{
+    margin-top: 29px;
+    -webkit-appearance: none;
+    width: 100px !important;
+    border-radius: 10px; /*这个属性设置使填充进度条时的图形为圆角*/
+    background: -webkit-linear-gradient(#777777, #777777) no-repeat, #e6e6e6;
+    background-size: 0% 100%;
+}
+.musicVol{
+    display: flex;
+    flex: 0 0 13%;
+}
+.volIconBox{
+    flex: 0 0 30%;
+    margin-top: 20px;
+}
+.volConBox{
+    flex: 0 0 70%;
+}
+.volIcon{
+    margin-left: 21px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+.musicWay{
+    display: flex;
+    flex: 0 0 8%;
+}
+.wayIcon{
+    margin-left: 40px;
+    margin-top: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.way{
+    width: 26px;
+    height: 26px;
+}
+.musicList{
+    display: flex;
+    flex: 0 0 5%;
+}
+.listIconBox{
+    margin-top: 17px;
+    width: 100%;
+    height: 33px;
+}
+.listIcon{
+    width: 40px;
+    height: 33px;
+    cursor: pointer;
+}
+
+#main{
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 700px;
+}
+.librettoBox{
+    position: relative;
+    width: 75%;
+    height: 80%;
+    margin-left: 10%;
+    margin-top: 8%;
+    /*border: 1px solid #ce7179;*/
+}
+.libretto{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    height: 90%;
+    border-radius: 15px;
+    overflow: hidden;
+    /*border: 1px solid green;*/
+}
+.musicListBox{
+    float: right;
+    margin-top: -50%;
+    width: 65%;
+    height: 50%;
+}
+.songsTit{
+    display: flex;
+    width: 100%;
+    height: 6%;
+    background-color: #1a1a1a;
+    opacity: 0.85;
+}
+.listClose{
+    flex: 0 0 15%;
+    margin-left: -7%;
+}
+.closeIcon{
+    width: 18px;
+    height: 19px;
+    margin-left: 30%;
+    margin-top: 5.5%;
+    cursor: pointer;
+}
+.songTit{
+    flex: 0 0 85%;
+    font-family: "Hannotate SC";
+    color: #efefef;
+    font-size: 17px;
+    margin-left: 7%;
+}
+.songsCon{
+    display: flex;
+    width: 100%;
+    height: 94%;
+    background-color: #656565;
+    opacity: 0.5;
+}
+.songNameBox{
+    flex: 0 0 35%;
+    height: 100%;
+}
+.singerBox{
+    flex: 0 0 50%;
+    height: 100%;
+}
+.totalTimeBox{
+    flex: 0 0 15%;
+    height: 100%;
+}
+.songName, .singer, .totalTime{
+    position: relative;
+    border-bottom: #1a1a1a 1px solid;
+    height: 8%;
+    background-color: grey;
+    cursor: pointer;
+}
+/*.songName:hover, .singer:hover, .totalTime:hover{*/
+    /*background-color: #2b2b2b;*/
+/*}*/
+.show{
+    display: block;
+}
+.hidden{
+    display: none;
+}
+.font{
+    font-family: "Hannotate SC";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+}
+.white{
+    color: #efefef;
+}
+.bold{
+    font-weight: bold;
+}
+.blue{
+    color: #444652;
+}
+a{
+    color: #3498db;
+}
+a:hover{
+    color: #132a44;
+}
+/*底部*/
+footer{
+    font-family: "Hannotate SC";
+    background-color: #949494;
+    color:rgb(57,125,161);
+}
+
+/*动画*/
+@keyframes come {
+    from {left:-100%;}
+    to {left:0;}
+}
+@keyframes left {
+    from {left:0;}
+    to {left:-100%;}
+}
+@keyframes extend {
+    from {left: 0;}
+    to {left: 1%}
+
+}
+
